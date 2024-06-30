@@ -2,7 +2,7 @@ baseURL: "https://ooyamakeigo.github.io/"
 title: ExampleSite
 paginate: 5
 theme: PaperMod
-publicDir: Docs
+publicDir: docs
 
 enableRobotsTXT: true
 buildDrafts: false
