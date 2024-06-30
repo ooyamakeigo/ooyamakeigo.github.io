@@ -62,7 +62,7 @@ params:
     title: "Ooyama Keigo"
     subtitle: "Master student at the University of Tokyo"
     #imageUrl: "https://avatars.githubusercontent.com/u/59508678?v=4"
-    imageUrl: "profile.jpg"
+    imageUrl: "static/profile.png"
     imageWidth: 200
     imageHeight: 200
     imageTitle: my image
