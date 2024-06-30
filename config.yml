@@ -18,10 +18,10 @@ minify:
 
 params:
   #    env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: okaponta
-  description: "Blog of okaponta, a software engineer."
+  title: ooyamakeigo
+  description: "Blog of ooyamakeigo"
   keywords: [Blog, Portfolio, PaperMod]
-  author: Kohei Okamoto
+  author: Keigo Oyama
   # author: ["Me", "You"] # multiple authors
   images: ["profile.jpg"]
   DateFormat: "January 2, 2006"
@@ -59,8 +59,8 @@ params:
   # profile-mode
   profileMode:
     enabled: true # needs to be explicitly set
-    title: "I'm Kohei 😎"
-    subtitle: "a.k.a. Okaponta, a software engineer."
+    title: "Ooyama Keigo"
+    subtitle: "Master student at the University of Tokyo"
     #imageUrl: "https://avatars.githubusercontent.com/u/59508678?v=4"
     imageUrl: "profile.jpg"
     imageWidth: 200
