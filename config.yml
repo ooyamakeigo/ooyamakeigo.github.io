@@ -62,7 +62,7 @@ params:
     title: "Ooyama Keigo"
     subtitle: "Master student at the University of Tokyo"
     #imageUrl: "https://avatars.githubusercontent.com/u/59508678?v=4"
-    imageUrl: "static/profile.png"
+    imageUrl: "./static/profile.png"
     imageWidth: 200
     imageHeight: 200
     imageTitle: my image
@@ -74,7 +74,7 @@ params:
     - name: twitter
       url: "https://twitter.com/okaponta_"
     - name: github
-      url: "https://github.com/okaponta"
+      url: "https://github.com/ooyamakeigo"
 
   cover:
     hidden: true # hide everywhere but not in structured data
