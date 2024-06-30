@@ -1,134 +1,204 @@
 baseURL: "https://ooyamakeigo.github.io/"
+publicDir: docs
 title: ExampleSite
 paginate: 5
 theme: PaperMod
-publicDir: docs
+theme: [hugo-PaperMod]
 
+# canonifyurls: true # URLを正規化するかどうか (テンプレートによって必要な場合あり)
+enableInlineShortcodes: true
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
 buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+mainsections: ["posts", "rarejob", "cebu"]
+disablePathToLower: true # パスに大文字が含まれていると小文字に変換されてしまうため、大文字のまま出力するように設定
 
 minify:
   disableXML: true
-  minifyOutput: true
+  # minifyOutput: true
+
+# 多言語対応の設定
+languages:
+  en:
+    languageName: "EN"
+    weight: 1
+    taxonomies:
+      tag: tags
+    menu:
+      # ヘッダに表示される
+      # ※weightが被ると片方しか表示されない
+      main:
+        - name: posts
+          url: posts/
+          weight: 5
+        - name: cebu🏝️
+          url: cebu/
+          weight: 10
+        - name: rarejob
+          url: rarejob/
+          weight: 15
+        - name: Archive
+          url: archives
+          weight: 20
+        - name: Search
+          url: search/
+          weight: 25
+        - name: Tags
+          url: tags/
+          weight: 30
+
+  jp:
+    languageName: "JP"
+    weight: 2
+    taxonomies:
+      tag: tags
+    menu:
+      main:
+        - name: posts
+          url: posts/
+          weight: 5
+        - name: cebu🏝️
+          url: cebu/
+          weight: 10
+        - name: rarejob
+          url: rarejob/
+          weight: 15
+        - name: Archive
+          url: archives
+          weight: 20
+        - name: Search
+          url: search/
+          weight: 25
+        - name: Tags
+          url: tags/
+          weight: 30
+
+    # 日本語表記でロフィールモードの場合の表示設定 (うまく表示されなかったためコメントアウト)
+    # custom params for each language should be under [langcode].parms - hugo v0.120.0
+    # params:
+    #   languageAltTitle: JP
+    #   profileMode:
+    #     enabled: true
+    #     title: Serina Yam
+    #     imageUrl: "profile.jpeg"
+    #     imageTitle: ProfileMode image
+    #     # imageWidth: 120
+    #     # imageHeight: 120
+    #     subtitle: >
+    #       バックエンジニアです。
+
+    #       英語学習についての投稿をしていく予定です。
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+assets:
+  # disableHLJS: true
+  favicon: "favicon.ico"
+#     favicon16x16: "<link / abs url>"
+#     favicon32x32: "<link / abs url>"
+#     apple_touch_icon: "<link / abs url>"
+#     safari_pinned_tab: "<link / abs url>"
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: Ooyamakeigo
-  description: "ExampleSite description"
-  keywords: [Blog, Portfolio, PaperMod]
-  author: Me
+  description: "Theme PaperMod - https://github.com/adityatelange/hugo-PaperMod"
+  author: Serina Yam
   # author: ["Me", "You"] # multiple authors
-  images: ["<link or path of image for opengraph, twitter-cards>"]
-  DateFormat: "January 2, 2006"
-  defaultTheme: auto # dark, light
-  disableThemeToggle: false
 
-  ShowReadingTime: true
+  defaultTheme: auto
+  # disableThemeToggle: true
   ShowShareButtons: true
+  ShowReadingTime: true
+  # disableSpecial1stPost: true
+  displayFullLangName: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
-  ShowCodeCopyButtons: false
-  ShowWordCount: true
+  ShowCodeCopyButtons: true
   ShowRssButtonInSectionTermList: true
-  UseHugoToc: true
-  disableSpecial1stPost: false
-  disableScrollToTop: false
-  comments: false
-  hidemeta: false
-  hideSummary: false
-  showtoc: false
-  tocopen: false
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  ShowToc: true
+  # comments: false
+  images: ["images/papermod-cover.png"]
 
-  assets:
-    # disableHLJS: true # to disable highlight.js
-    # disableFingerprinting: true
-    favicon: "<link / abs url>"
-    favicon16x16: "<link / abs url>"
-    favicon32x32: "<link / abs url>"
-    apple_touch_icon: "<link / abs url>"
-    safari_pinned_tab: "<link / abs url>"
-
-  label:
-    text: "Home"
-    icon: /apple-touch-icon.png
-    iconHeight: 35
-
-  # profile-mode
+  # プロフィールモード
   profileMode:
-    enabled: false # needs to be explicitly set
-    title: ExampleSite
-    subtitle: "This is subtitle"
-    imageUrl: "<img location>"
-    imageWidth: 120
-    imageHeight: 120
+    enabled: false # プロフィールモードoff
+    title: Serina Yam
+    subtitle: >
+      👋 I'm a backend engneer.
+
+      I will be posting about learning English!
+    imageUrl: "profile.jpeg"
     imageTitle: my image
-    buttons:
-      - name: Posts
-        url: posts
-      - name: Tags
-        url: tags
+    # imageWidth: 120
+    # imageHeight: 120
+    # buttons:
+    #   - name: Posts
+    #     url: posts
+    #   - name: Tags
+    #     url: tags
 
-  # home-info mode
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
-    Content: Welcome to my blog
+    Title: "Serina Yam"
+    Content: >
+      👋 I'm a backend engneer.
 
+      I will be posting about learning English!
+
+  # nameにアイコン名を指定することでアイコン表示可能
+  # 一覧のURL: https://github.com/adityatelange/hugo-PaperMod/wiki/Icons
   socialIcons:
-    - name: x
-      url: "https://x.com/"
-    - name: stackoverflow
-      url: "https://stackoverflow.com"
     - name: github
-      url: "https://github.com/"
+      title: Share Github
+      url: "https://github.com/serina-yam"
+    - name: twitter
+      title: Share X/Twitter
+      url: "https://twitter.com/serina_yam"
+    - name: zenn
+      title: Share zenn
+      url: "https://zenn.dev/serina_yam"
 
-  analytics:
-    google:
-      SiteVerificationTag: "XYZabc"
-    bing:
-      SiteVerificationTag: "XYZabc"
-    yandex:
-      SiteVerificationTag: "XYZabc"
+  # editPost:
+  #   URL: "https://github.com/adityatelange/hugo-PaperMod/tree/exampleSite/content"
+  #   Text: "Suggest Changes" # edit text
+  #   appendFilePath: true # to append file path to Edit link
 
-  cover:
-    hidden: true # hide everywhere but not in structured data
-    hiddenInList: true # hide on list pages and home
-    hiddenInSingle: true # hide on single page
+  # label:
+  # iconSVG: '<svg xmlns="http://www.w3.org/2000/svg" height="25" viewBox="0 -960 960 960" fill="currentColor"><path d="M320-240h320v-80H320v80Zm0-160h320v-80H320v80ZM240-80q-33 0-56.5-23.5T160-160v-640q0-33 23.5-56.5T240-880h320l240 240v480q0 33-23.5 56.5T720-80H240Zm280-520v-200H240v640h480v-440H520ZM240-800v200-200 640-640Z"/></svg>'
+  # text: "Home"
+  # icon: icon.png
+  # iconHeight: 35
 
-  editPost:
-    URL: "https://github.com/<path_to_repo>/content"
-    Text: "Suggest Changes" # edit text
-    appendFilePath: true # to append file path to Edit link
+  # analytics:
+  #     google:
+  #         SiteVerificationTag: "XYZabc"
 
-  # for search
-  # https://fusejs.io/api/options.html
-  fuseOpts:
-    isCaseSensitive: false
-    shouldSort: true
-    location: 0
-    distance: 1000
-    threshold: 0.4
-    minMatchCharLength: 0
-    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
-    keys: ["title", "permalink", "summary", "content"]
-menu:
-  main:
-    - identifier: categories
-      name: categories
-      url: /categories/
-      weight: 10
-    - identifier: tags
-      name: tags
-      url: /tags/
-      weight: 20
-    - identifier: example
-      name: example.org
-      url: https://example.org
-      weight: 30
-# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
-pygmentsUseClasses: true
+  # cover:
+  #     hidden: true # hide everywhere but not in structured data
+  #     hiddenInList: true # hide on list pages and home
+  #     hiddenInSingle: true # hide on single page
+
+  # fuseOpts:
+  #     isCaseSensitive: false
+  #     shouldSort: true
+  #     location: 0
+  #     distance: 1000
+  #     threshold: 0.4
+  #     minMatchCharLength: 0
+  #     keys: ["title", "permalink", "summary", "content"]
+
 markup:
+  goldmark:
+    renderer:
+      unsafe: true
   highlight:
     noClasses: false
     # anchorLineNos: true
@@ -136,3 +206,27 @@ markup:
     # guessSyntax: true
     # lineNos: true
     # style: monokai
+
+# privacy:
+#   vimeo:
+#     disabled: false
+#     simple: true
+
+#   twitter:
+#     disabled: false
+#     enableDNT: true
+#     simple: true
+
+#   instagram:
+#     disabled: false
+#     simple: true
+
+#   youtube:
+#     disabled: false
+#     privacyEnhanced: true
+
+services:
+  instagram:
+    disableInlineCSS: true
+  twitter:
+    disableInlineCSS: true
