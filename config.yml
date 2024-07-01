@@ -63,8 +63,8 @@ params:
     subtitle: "Master student at the University of Tokyo"
     #imageUrl: "https://avatars.githubusercontent.com/u/59508678?v=4"
     imageUrl: "profile.jpg"
-    imageWidth: 200
-    imageHeight: 200
+    imageWidth: 250
+    imageHeight: 250
     imageTitle: my image
     # buttons:
     #     - name: Posts
