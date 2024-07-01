@@ -62,7 +62,7 @@ params:
     title: "Ooyama Keigo"
     subtitle: "Master student at the University of Tokyo"
     #imageUrl: "https://avatars.githubusercontent.com/u/59508678?v=4"
-    imageUrl: "profile.png"
+    imageUrl: "profile.jpg"
     imageWidth: 200
     imageHeight: 200
     imageTitle: my image
@@ -72,7 +72,7 @@ params:
 
   socialIcons:
     - name: twitter
-      url: "https://twitter.com/okaponta_"
+      url: "https://twitter.com/ooyama"
     - name: github
       url: "https://github.com/ooyamakeigo"
 
@@ -82,7 +82,7 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/okaponta/profile/content"
+    URL: "https://github.com/ooyama/profile/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
