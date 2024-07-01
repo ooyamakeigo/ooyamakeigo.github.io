@@ -27,6 +27,8 @@ params:
   DateFormat: "January 2, 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: false
+  customCSS:
+  - "css/custom.css"
 
   ShowReadingTime: true
   ShowShareButtons: true
@@ -104,7 +106,7 @@ menu:
       weight: 5
     - identifier: profile
       name: profile
-      url: fixed/profile
+      url: profile/
       weight: 10
     - name: works
       url: fixed/works
